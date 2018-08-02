@@ -1,4 +1,3 @@
-FROM ubuntu:18.04
-ADD docker-apt-install /usr/local/bin
-RUN docker-apt-install python-pip slurm-client make
+FROM kernsuite/base:4
+RUN docker-apt-install python-pip slurm-client make nodejs singularity-container
 RUN pip install toil[cwl,slurm]
